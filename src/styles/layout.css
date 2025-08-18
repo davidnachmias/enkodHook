@@ -204,6 +204,7 @@
   background: transparent;
   cursor: pointer;
   padding: 4px;
+  border: 8px solid transparent; /* מרווח פנימי */
 }
 
 .sidebar-icon {
