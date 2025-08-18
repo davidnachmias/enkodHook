@@ -1,31 +1,23 @@
 import React from "react";
-import {
-  Home,
-  Sparkles,
-  LayoutGrid,
-  Folder,
-  BookOpen,
-  HelpCircle,
-  Settings,
-} from "lucide-react";
-import logo from "../assets/logo.png"; // Adjust the path as necessary
+import logo from "../assets/photos/logo.svg";
+// אייקונים מהתיקייה שלך
+import homeIcon from "../assets/icons/home.svg";
+import aiIcon from "../assets/icons/aiicon.svg";
+import bookIcon from "../assets/icons/book.svg";
+import folderIcon from "../assets/icons/folder.svg";
+import gridIcon from "../assets/icons/grid.svg";
+import helpIcon from "../assets/icons/help.svg";
 
-// Icon mapping for sections
+// Map בין section לשם האייקון
 const SECTION_ICONS = {
-  Home: Home,
-  Generator: Sparkles,
-  Library: LayoutGrid,
-  Projects: Folder,
-  Docs: BookOpen,
+  Home: homeIcon,
+  Generator: aiIcon, // מתאים ל-"Generator"
+  Library: bookIcon,
+  Projects: folderIcon,
+  Docs: gridIcon,
 };
 
-const NavItem = ({
-  icon: Icon,
-  name,
-  isActive,
-  onClick,
-  isBottomButton = false,
-}) => (
+const NavItem = ({ icon, name, isActive, onClick, isBottomButton = false }) => (
   <button
     onClick={onClick}
     className={`sidebar-nav-item ${isActive ? "active" : ""} ${
@@ -33,7 +25,7 @@ const NavItem = ({
     }`}
     title={name}
   >
-    <Icon className="sidebar-icon" />
+    <img src={icon} alt={name} className="sidebar-icon" />
   </button>
 );
 
@@ -52,13 +44,13 @@ export default function Sidebar({
       {/* Main navigation items */}
       <div className="sidebar-nav">
         {sections.map((section) => {
-          const Icon = SECTION_ICONS[section];
-          if (!Icon) return null;
+          const icon = SECTION_ICONS[section];
+          if (!icon) return null;
 
           return (
             <NavItem
               key={section}
-              icon={Icon}
+              icon={icon}
               name={section}
               isActive={activeSection === section}
               onClick={() => onSectionChange(section)}
@@ -70,19 +62,12 @@ export default function Sidebar({
       {/* Bottom navigation items */}
       <div className="sidebar-bottom-nav">
         <NavItem
-          icon={HelpCircle}
+          icon={helpIcon}
           name="Help"
           isActive={false}
           onClick={() => {}}
           isBottomButton={true}
         />
-        {/* <NavItem
-          icon={Settings}
-          name="Settings"
-          isActive={false}
-          onClick={() => {}}
-          isBottomButton={true}
-        /> */}
       </div>
     </aside>
   );

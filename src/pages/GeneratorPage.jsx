@@ -1,49 +1,49 @@
-import React, { useState, useRef } from 'react';
-import Layout from '../layouts/Layout';
-import ControlPanel from '../components/ControlPanel';
-import PreviewArea from '../components/PreviewArea';
+import React, { useState, useRef } from "react";
+import Layout from "../layouts/Layout";
+import ControlPanel from "../components/ControlPanel";
+import PreviewArea from "../components/PreviewArea";
 
 // Import constants
-import { SECTIONS, DEFAULT_CONFIG } from '../constants/artStyles';
+import { SECTIONS, DEFAULT_CONFIG } from "../constants/artStyles";
 
 // Import hooks
-import { useImageGeneration } from '../hooks/useImageGeneration';
-import { useCanvasInteraction } from '../hooks/useCanvasInteraction';
-import { useImageEditing } from '../hooks/useImageEditing';
+import { useImageGeneration } from "../hooks/useImageGeneration";
+import { useCanvasInteraction } from "../hooks/useCanvasInteraction";
+import { useImageEditing } from "../hooks/useImageEditing";
 
 // Import utilities
-import { downloadImage, shareImage } from '../utils/imageUtils';
+import { downloadImage, shareImage } from "../utils/imageUtils";
 
 export default function GeneratorPage() {
   // Core state
   const [currentSection, setCurrentSection] = useState(SECTIONS.GENERATOR);
-  const [prompt, setPrompt] = useState('');
-  
+  const [prompt, setPrompt] = useState("");
+
   // Configuration state
   const [config, setConfig] = useState({
     ...DEFAULT_CONFIG,
-    uiType: 'Menu',
-    style: 'Cartoon',
-    mode: 'In-Game Overlay',
-    interaction: 'Static',
+    uiType: "Menu",
+    style: "Cartoon",
+    mode: "In-Game Overlay",
+    interaction: "Static",
     showPlaceholder: false,
     wireframe: false,
     quantity: 1,
-    resolution: '600x606',
-    aspectRatio: '1:1 (Square)'
+    resolution: "600x606",
+    aspectRatio: "1:1 (Square)",
   });
-  
+
   // Library state
   const [editingImage, setEditingImage] = useState(null);
-  
+
   // Style selection state
   const [selectedStyles, setSelectedStyles] = useState([]);
-  
+
   // Delete confirmation state
-  const [deleteConfirmation, setDeleteConfirmation] = useState({ 
-    show: false, 
-    imageId: null, 
-    imageName: '' 
+  const [deleteConfirmation, setDeleteConfirmation] = useState({
+    show: false,
+    imageId: null,
+    imageName: "",
   });
 
   // Refs
@@ -66,7 +66,7 @@ export default function GeneratorPage() {
     setGeneratedImages,
     setGenerationHistory,
     setCurrentImage,
-    setCurrentImageIndex
+    setCurrentImageIndex,
   } = useImageGeneration();
 
   const {
@@ -80,7 +80,7 @@ export default function GeneratorPage() {
     handleMouseDown,
     handleMouseMove,
     handleMouseUp,
-    resetCanvas
+    resetCanvas,
   } = useCanvasInteraction();
 
   const {
@@ -94,7 +94,7 @@ export default function GeneratorPage() {
     cropImageHandler,
     rotateImageHandlerAsync,
     changeImageStyle,
-    setCropArea
+    setCropArea,
   } = useImageEditing();
 
   // Handle section navigation
@@ -113,7 +113,7 @@ export default function GeneratorPage() {
   // Handle image generation
   const handleGenerate = async (providedConfig = null) => {
     if (!prompt.trim()) return;
-    
+
     const finalConfig = providedConfig || config;
     await generateImage(prompt, finalConfig);
   };
@@ -137,7 +137,7 @@ export default function GeneratorPage() {
   // Handle download
   const handleDownload = () => {
     if (currentImage) {
-      downloadImage(currentImage, 'generated-ui.png');
+      downloadImage(currentImage, "generated-ui.png");
     }
   };
 
@@ -169,18 +169,18 @@ export default function GeneratorPage() {
 
   // Handle aspect ratio change from floating controls
   const handleAspectRatioChange = (ratio) => {
-    setConfig(prev => ({
+    setConfig((prev) => ({
       ...prev,
-      aspectRatio: ratio
+      aspectRatio: ratio,
     }));
   };
 
   // Define sections for navigation
-  const sections = ['Home', 'Generator', 'Library', 'Projects', 'Docs'];
+  const sections = ["Home", "Generator", "Docs", "Projects", "Library"];
 
   return (
-    <Layout 
-      activeSection={currentSection} 
+    <Layout
+      activeSection={currentSection}
       onSectionChange={handleSectionChange}
       sections={sections}
     >
@@ -195,7 +195,7 @@ export default function GeneratorPage() {
           isLoading={isLoading}
           credits={12}
         />
-        
+
         {/* Preview Area */}
         <PreviewArea
           currentImage={currentImage}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
-import avatar from "../assets/avatar.png"; // Assuming you have an avatar image
+import avatar from "../assets/photos/avatar.png"; // Assuming you have an avatar image
 
 // Mock User for demo; replace with real auth/user logic
 export const User = {
