@@ -1,0 +1,303 @@
+/* Root two-column shell: [sidebar] | [right column] */
+.app-shell {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: var(--bg-primary);
+}
+
+/* Right column with header + content */
+.app-right {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0; /* מונע גלילה אופקית מיותרת */
+  height: 100vh;
+}
+
+/* Main content area under the header */
+.layout-main {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  overflow: hidden; /* או auto אם רוצים גלילה פנימית */
+  transform: rotate(0deg);
+  opacity: 1;
+}
+
+/* Header (on the right, above content) */
+.header {
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--spacing-2xl);
+  height: 58px;
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.header-logo {
+  font-size: 16px;
+  font-family: "SF Pro", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.header-nav-item {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-normal);
+}
+
+.header-nav-item:hover {
+  color: var(--text-primary);
+  background-color: var(--bg-tertiary);
+}
+
+.header-nav-item.active {
+  color: var(--accent-primary);
+  background-color: rgba(138, 63, 252, 0.1);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.header-user-menu {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  cursor: pointer;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-lg);
+  transition: background-color var(--transition-normal);
+}
+
+.header-user-menu:hover {
+  background-color: var(--bg-tertiary);
+}
+
+.header-avatar {
+  width: 32px;
+  height: 30px;
+  border-radius: 32px;
+  border: 2px solid var(--border-color);
+}
+
+.header-username {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.header-dropdown-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--text-secondary);
+}
+
+.header-button {
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 500;
+  transition: all var(--transition-normal);
+}
+
+.header-button:hover {
+  background-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.header-button.primary {
+  background-color: var(--accent-primary);
+  color: white;
+  border-color: var(--accent-primary);
+}
+
+.header-button.primary:hover {
+  background-color: var(--accent-secondary);
+  border-color: var(--accent-secondary);
+}
+
+/* Sidebar - full height on the left */
+.sidebar {
+  background-color: var(--bg-secondary);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ממרכז אופקית את האייקונים */
+  width: 56px;
+  height: 100vh;
+  overflow: hidden;
+}
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  margin-bottom: 48px;
+}
+
+.sidebar-logo-image {
+  width: 32px;
+  height: 32px;
+}
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* במקום center */
+  gap: 17px; /* היה 17 — הקטן את הפער בין הכפתורים עצמם */
+  flex: 1; /* משאיר את התחתונה למטה */
+  margin-top: 6px; /* שליטה עדינה על המרווח מהלוגו */
+}
+
+.sidebar-bottom-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 17px;
+  margin-top: auto; /* דוחף לתחתית */
+  margin-bottom: 15px;
+}
+
+.sidebar-nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-lg);
+  color: var(--text-secondary);
+  transition: all var(--transition-normal);
+  position: relative;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.sidebar-nav-item.bottom-button {
+  width: 24px;
+  height: 24px;
+}
+
+.sidebar-nav-item:hover {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.sidebar-nav-item.active {
+  background-color: var(--accent-primary);
+  color: white;
+}
+
+.sidebar-nav-item.active::before {
+  content: "";
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 20px;
+  background-color: var(--accent-primary);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.sidebar-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Optional inner layout helpers */
+.main-content {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex: 1;
+}
+
+/* Control panel (if you use one on the left of canvas) */
+.control-panel {
+  width: 400px;
+  height: 100%;
+  background: var(--bg-secondary);
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-2xl);
+  overflow-y: auto;
+  border-right: 1px solid var(--border-color);
+  flex-shrink: 0;
+}
+
+.control-panel-section {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.control-panel-section-title {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+.control-panel-section-subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  color: #6b6c6d;
+}
+
+.control-panel-section-info {
+  color: #6b6c6d;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .control-panel {
+    width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+  .app-right {
+    width: 100%;
+  }
+  .control-panel {
+    width: 100%;
+    max-width: 400px;
+  }
+}

@@ -1,0 +1,193 @@
+/* Control Panel Styles */
+.control-panel {
+  width: 400px;
+  height: 100%;
+  background: #1B1B1B;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+/* Prompt Section */
+.prompt-section {
+  margin-bottom: 24px;
+}
+
+.prompt-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.prompt-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.prompt-title {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+.prompt-required {
+  font-size: 14px;
+  font-weight: 400;
+  color: #6B6C6D;
+}
+
+.inspire-button {
+  font-size: 12px;
+  font-weight: 400;
+  color: #E9E9E9;
+}
+
+.prompt-textarea {
+  height: 200px;
+}
+
+.prompt-hints {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 12px;
+}
+
+.hints-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.clear-button {
+  margin-left: auto;
+}
+
+/* Advanced Options Section */
+.advanced-options-section {
+  margin-bottom: 24px;
+}
+
+.advanced-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 0;
+  transition: margin-bottom 0.2s ease;
+}
+
+.advanced-toggle.open {
+  margin-bottom: 16px;
+}
+
+.advanced-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.options-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+}
+
+.option-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.option-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+  display: block;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.checkbox-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.checkbox-input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent-primary);
+}
+
+.number-input,
+.text-input {
+  width: 100%;
+  padding: 8px 12px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-primary);
+  font-size: 14px;
+}
+
+/* Generation Controls */
+.generation-controls {
+  margin-top: auto;
+}
+
+.credits-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.credits-display {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.credits-text {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.generate-button {
+  width: 100%;
+  height: 48px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .control-panel {
+    width: 100%;
+    padding: 16px;
+  }
+  
+  .options-grid,
+  .options-grid-3 {
+    grid-template-columns: 1fr;
+  }
+} 

@@ -1,0 +1,117 @@
+{
+  "name": "UIKit",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the UI kit"
+    },
+    "prompt": {
+      "type": "string",
+      "description": "Original prompt used to generate this kit"
+    },
+    "genre": {
+      "type": "string",
+      "enum": [
+        "cyberpunk",
+        "fantasy",
+        "pixel",
+        "retro",
+        "stylized",
+        "aaa",
+        "minimalist",
+        "horror",
+        "sci-fi",
+        "medieval"
+      ],
+      "description": "Game genre style"
+    },
+    "components": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "hud",
+              "health_bar",
+              "inventory",
+              "menu",
+              "dialogue",
+              "minimap",
+              "button",
+              "panel",
+              "icon",
+              "sliders"
+            ]
+          },
+          "name": {
+            "type": "string"
+          },
+          "preview_url": {
+            "type": "string"
+          },
+          "config": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "color_palette": {
+      "type": "object",
+      "properties": {
+        "primary": {
+          "type": "string"
+        },
+        "secondary": {
+          "type": "string"
+        },
+        "accent": {
+          "type": "string"
+        },
+        "background": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        }
+      }
+    },
+    "export_formats": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "unity",
+          "unreal",
+          "png",
+          "svg",
+          "figma"
+        ]
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "generating",
+        "ready",
+        "exported"
+      ],
+      "default": "generating"
+    },
+    "thumbnail_url": {
+      "type": "string"
+    },
+    "likes": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of likes the kit has received"
+    }
+  },
+  "required": [
+    "name",
+    "prompt",
+    "genre"
+  ]
+}

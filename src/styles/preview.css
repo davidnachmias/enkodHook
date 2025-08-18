@@ -1,0 +1,365 @@
+/* Preview Area Styles */
+.preview-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-primary);
+  position: relative;
+}
+
+/* Success Message */
+.success-message {
+  position: absolute;
+  top: 80px;
+  right: 24px;
+  background: var(--success-color);
+  color: white;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.success-close {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Main Preview Container */
+.preview-container {
+  border-radius: 20px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  margin-bottom: 24px;
+  margin-right: 12px;
+  background: #222222;
+  background-image: radial-gradient(circle, rgba(70, 60, 60, 0.49) 2px, transparent 2px);
+  background-size: 20px 20px;
+  position: relative;
+}
+
+/* Loading State */
+.preview-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  color: var(--text-secondary);
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--border-color);
+  border-top: 3px solid var(--accent-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Generated Image */
+.preview-image {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Mock UI Asset */
+.mock-ui-asset {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%);
+  border-radius: 16px;
+  padding: 24px;
+  min-width: 300px;
+  max-width: 400px;
+  border: 2px solid var(--accent-primary);
+  box-shadow: 0 8px 32px rgba(138, 63, 252, 0.3);
+}
+
+/* Power Section */
+.power-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.power-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.power-info {
+  flex: 1;
+}
+
+.power-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.power-bar-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.power-bar {
+  flex: 1;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.power-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ec4899, #f97316);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.power-max {
+  font-size: 12px;
+  color: white;
+  font-weight: bold;
+}
+
+/* Stats Section */
+.stats-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.stat-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-icon.health {
+  background: #10b981;
+}
+
+.stat-icon.attack {
+  background: #ef4444;
+}
+
+.stat-icon.super {
+  background: #f59e0b;
+}
+
+.stat-label {
+  color: white;
+  font-weight: bold;
+}
+
+.stat-value {
+  color: white;
+  margin-left: auto;
+}
+
+/* Upgrade Section */
+.upgrade-section {
+  text-align: center;
+}
+
+.upgrade-title {
+  font-size: 14px;
+  color: white;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.upgrade-button {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.diamond-icon {
+  color: #ec4899;
+}
+
+.coin-icon {
+  color: #f59e0b;
+}
+
+/* Floating Controls */
+.floating-controls {
+  position: absolute;
+  z-index: 10;
+}
+
+/* Top Left Controls */
+.top-left-controls {
+  top: 20px;
+  left: 20px;
+  display: flex;
+  gap: 8px;
+}
+
+.rotate-button {
+  width: 32px;
+  height: 32px;
+  background: #333333;
+  border: 1px solid #404040;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.rotate-button:hover {
+  background: #404040;
+}
+
+/* Bottom Left Controls */
+.bottom-left-controls {
+  bottom: 40px;
+  left: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+.control-item {
+  background: #333333;
+  border: 1px solid #404040;
+  border-radius: 6px;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.control-text {
+  color: #cccccc;
+  font-size: 14px;
+}
+
+.color-preview {
+  width: 16px;
+  height: 16px;
+  background: #333333;
+  border: 1px solid #cccccc;
+  border-radius: 2px;
+}
+
+/* Center Tool Bar */
+.tool-bar {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333333;
+  border: 1px solid #404040;
+  border-radius: 8px;
+  padding: 4px;
+  display: flex;
+  gap: 2px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.tool-button {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+.tool-button.active {
+  background: #404040;
+}
+
+.tool-button:hover {
+  background: #404040;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .preview-container {
+    padding: 16px;
+    margin-right: 8px;
+  }
+  
+  .mock-ui-asset {
+    min-width: 250px;
+    padding: 16px;
+  }
+  
+  .top-left-controls,
+  .bottom-left-controls {
+    position: relative;
+    top: auto;
+    left: auto;
+    bottom: auto;
+    margin: 8px;
+  }
+  
+  .tool-bar {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin: 8px auto;
+  }
+} 

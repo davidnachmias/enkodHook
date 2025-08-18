@@ -1,0 +1,114 @@
+/* Canvas Container */
+.canvas-container {
+  width: 1440px;
+  height: 750px;
+  transform: rotate(0deg);
+  opacity: 1;
+  background: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  background-image: radial-gradient(circle, #404040 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: 0 0;
+}
+
+/* Main Canvas Area */
+.canvas-main {
+  flex: 1;
+  position: relative;
+  overflow: visible;
+  background: var(--bg-primary);
+}
+
+/* Top Left Floating Buttons */
+.top-left-buttons {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  gap: 8px;
+}
+
+.rotate-btn {
+  width: 60px;
+  height: 32px;
+  background: #cccccc;
+  border: 1px solid #999999;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Bottom Right Controls */
+.bottom-right-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+.opacity-control,
+.color-picker {
+  background: #333333;
+  border: 1px solid #404040;
+  border-radius: 6px;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.color-sample {
+  width: 16px;
+  height: 16px;
+  background: #333333;
+  border: 1px solid #cccccc;
+  border-radius: 2px;
+}
+
+.opacity-text {
+  color: #cccccc;
+  font-size: 14px;
+}
+
+/* Bottom Center Tool Buttons */
+.bottom-center-tools {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333333;
+  border: 1px solid #404040;
+  border-radius: 8px;
+  padding: 4px;
+  display: flex;
+  gap: 2px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.tool-button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.tool-button.active {
+  background: #404040;
+}
+
+.tool-button.inactive {
+  background: transparent;
+}
