@@ -8,7 +8,6 @@ import {
   HelpCircle,
   Settings,
 } from "lucide-react";
-import logo from "../assets/logo.png"; // Adjust the path as necessary
 
 // Icon mapping for sections
 const SECTION_ICONS = {
@@ -46,7 +45,7 @@ export default function Sidebar({
     <aside className="sidebar">
       {/* Logo area */}
       <div className="sidebar-logo">
-        <img className="sidebar-logo-image" src={logo} alt="logo" />
+        <img className="sidebar-logo-image" src="/logo.png" alt="logo" />
       </div>
 
       {/* Main navigation items */}

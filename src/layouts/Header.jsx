@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
-import avatar from "../assets/avatar.png"; // Assuming you have an avatar image
 
 // Mock User for demo; replace with real auth/user logic
 export const User = {
@@ -24,7 +23,7 @@ export default function Header() {
       </div>
       <div className="header-right">
         <div className="header-user-menu">
-          <img alt="User Avatar" src={avatar} className="header-avatar" />
+          <img alt="User Avatar" src="/avatar.png" className="header-avatar" />
           <span className="header-username">{user?.full_name}</span>
           <ChevronDown className="header-dropdown-icon" />
         </div>
