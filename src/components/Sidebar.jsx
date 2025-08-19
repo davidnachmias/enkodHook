@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../assets/photos/logo.svg";
 // אייקונים מהתיקייה שלך
 import homeIcon from "../assets/icons/home.svg";
-import aiIcon from "../assets/icons/aiicon.svg";
+import ai from "../assets/icons/ai.svg";
 import bookIcon from "../assets/icons/book.svg";
 import folderIcon from "../assets/icons/folder.svg";
 import gridIcon from "../assets/icons/grid.svg";
@@ -10,7 +10,7 @@ import helpIcon from "../assets/icons/help.svg";
 
 const SECTION_ICONS = {
   Home: homeIcon,
-  Generator: aiIcon,
+  Generator: ai,
   Library: bookIcon,
   Projects: folderIcon,
   Docs: gridIcon,
