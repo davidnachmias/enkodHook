@@ -194,17 +194,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 48px; /* 24px icon + 8px padding + 16px border */
+
+  /* גודל כולל = 24 (icon) + 4*2 (padding) + 8*2 (border) = 48px */
+  width: 48px;
   height: 48px;
 
-  border-radius: var(--radius-lg);
-  color: var(--text-secondary);
-  transition: all var(--transition-normal);
+  border-radius: 8px; /* כמו בפיגמה */
   position: relative;
   cursor: pointer;
-  padding: 4px; /* רווח פנימי */
-  border: 8px; /* מסגרת שקופה */
+
+  padding: 4px; /* ריווח פנימי */
+  border: 8px solid transparent; /* מקום למסגרת */
   background: transparent;
+
+  color: var(--text-secondary);
+  transition: all var(--transition-normal);
 }
 
 .sidebar-icon {
@@ -223,17 +227,15 @@
 }
 
 .sidebar-nav-item.active {
+  border-radius: 8px;
+  border: 8px solid transparent; /* משאיר מקום */
   background: linear-gradient(
-    180deg,
-    rgba(105, 111, 255, 0.75) 0%,
-    rgba(80, 86, 255, 0.75) 100%
-  );
+      180deg,
+      rgba(105, 111, 255, 0.75) 0%,
+      rgba(80, 86, 255, 0.75) 100%
+    )
+    border-box; /* צובע גם את הגבול */
   color: var(--text-primary);
-}
-
-.sidebar-icon {
-  width: 28px;
-  height: 28px;
 }
 
 /* Optional inner layout helpers */

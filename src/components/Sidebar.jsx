@@ -8,10 +8,9 @@ import folderIcon from "../assets/icons/folder.svg";
 import gridIcon from "../assets/icons/grid.svg";
 import helpIcon from "../assets/icons/help.svg";
 
-// Map בין section לשם האייקון
 const SECTION_ICONS = {
   Home: homeIcon,
-  Generator: aiIcon, // מתאים ל-"Generator"
+  Generator: aiIcon,
   Library: bookIcon,
   Projects: folderIcon,
   Docs: gridIcon,
