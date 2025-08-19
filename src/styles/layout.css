@@ -164,7 +164,7 @@
   align-items: center;
   justify-content: center;
   height: 56px;
-  margin-bottom: 48px;
+  margin-bottom: 26px;
 }
 
 .sidebar-logo-image {
@@ -187,7 +187,6 @@
   align-items: center;
   gap: 17px;
   margin-top: auto; /* דוחף לתחתית */
-  margin-bottom: 20px;
 }
 
 .sidebar-nav-item {
