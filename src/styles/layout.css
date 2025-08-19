@@ -195,20 +195,20 @@
   align-items: center;
   justify-content: center;
 
-  /* גודל כולל = 24 (icon) + 4*2 (padding) + 8*2 (border) = 48px */
-  width: 48px;
-  height: 48px;
+  width: 32px;
+  height: 32px;
 
-  border-radius: 8px; /* כמו בפיגמה */
-  position: relative;
+  border-radius: 8px;
   cursor: pointer;
+  position: relative;
 
-  padding: 4px; /* ריווח פנימי */
-  border: 8px solid transparent; /* מקום למסגרת */
+  padding: 4px; /* יוצר את ה־32 ביחד עם האייקון */
+  border: none; /* לא מוסיפים עוד border כי זה יגדיל */
   background: transparent;
 
   color: var(--text-secondary);
-  transition: all var(--transition-normal);
+  transition: color var(--transition-normal),
+    background-color var(--transition-normal);
 }
 
 .sidebar-icon {
@@ -228,7 +228,6 @@
 
 .sidebar-nav-item.active {
   border-radius: 8px;
-  border: 8px solid transparent; /* משאיר מקום */
   background: linear-gradient(
       180deg,
       rgba(105, 111, 255, 0.75) 0%,
