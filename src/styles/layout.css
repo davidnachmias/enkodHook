@@ -194,14 +194,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   width: 32px;
   height: 32px;
-
   border-radius: 8px;
   cursor: pointer;
   position: relative;
-
   padding: 4px; /* יוצר את ה־32 ביחד עם האייקון */
   border: none; /* לא מוסיפים עוד border כי זה יגדיל */
   background: transparent;
@@ -209,11 +206,6 @@
   color: var(--text-secondary);
   transition: color var(--transition-normal),
     background-color var(--transition-normal);
-}
-
-.sidebar-icon {
-  width: 24px;
-  height: 24px;
 }
 
 .sidebar-nav-item.bottom-button {
@@ -229,11 +221,10 @@
 .sidebar-nav-item.active {
   border-radius: 8px;
   background: linear-gradient(
-      180deg,
-      rgba(105, 111, 255, 0.75) 0%,
-      rgba(80, 86, 255, 0.75) 100%
-    )
-    border-box; /* צובע גם את הגבול */
+    180deg,
+    rgba(105, 111, 255, 0.75) 0%,
+    rgba(80, 86, 255, 0.75) 100%
+  );
   color: var(--text-primary);
 }
 

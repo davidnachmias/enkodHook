@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../assets/photos/logo.svg";
 // אייקונים מהתיקייה שלך
 import homeIcon from "../assets/icons/home.svg";
-import aiIcon from "../assets/icons/aiicon.svg";
+import aiIcon from "../assets/icons/aiIcon.svg";
 import bookIcon from "../assets/icons/book.svg";
 import folderIcon from "../assets/icons/folder.svg";
 import gridIcon from "../assets/icons/grid.svg";
