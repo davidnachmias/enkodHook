@@ -24,16 +24,18 @@
 .prompt-label {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 11px;
 }
 
 .prompt-title {
+  font-family: "SF Pro", sans-serif;
   font-size: 16px;
   font-weight: 400;
   color: var(--text-primary);
 }
 
 .prompt-required {
+  font-family: "SF Pro", sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #6b6c6d;
